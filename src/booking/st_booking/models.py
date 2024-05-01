@@ -6,8 +6,8 @@ from ..stadium.models import Stadium
 class Booking(models.Model):
     status_choices = (
         (1, 'Active'),
-        (2, 'Deactive'),
-        (3, 'Delete'),
+        (2, 'Cancelled'),
+        (3, 'Booked'),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     stadium = models.ForeignKey(Stadium, on_delete=models.CASCADE, null=True)
