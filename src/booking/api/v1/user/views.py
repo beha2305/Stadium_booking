@@ -8,25 +8,25 @@ from booking.api.v1.permission import AdminPermission, IsStadiumOwner
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [AdminPermission, IsStadiumOwner]
+    permission_classes = [AdminPermission]
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class RoleViewSet(viewsets.ModelViewSet):
-    permission_classes = [AdminPermission, IsStadiumOwner]
+    permission_classes = [AdminPermission]
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
 
 
 class PermissionViewSet(viewsets.ModelViewSet):
-    permission_classes = [AdminPermission, IsStadiumOwner]
+    permission_classes = [AdminPermission]
     queryset = Permission.objects.all()
     serializer_class = PermissionSerializer
 
 
 class RolePermissionView(APIView):
-    permission_classes = [AdminPermission, IsStadiumOwner]
+    permission_classes = [AdminPermission]
 
     def patch(self, request, pk, *args, **kwargs):
         role = Role.objects.get(id=pk)
