@@ -8,7 +8,7 @@ from booking.api.v1.permission import AdminPermission, IsStadiumOwner
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    permission_classes = [AdminPermission]
+    # permission_classes = [AdminPermission]
     queryset = User.objects.all()
     serializer_class = UserSerializer
 

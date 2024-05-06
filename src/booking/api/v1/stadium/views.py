@@ -45,8 +45,8 @@ class StadiumViewSet(viewsets.ModelViewSet):
                 id__in=Booking.objects.filter(
                     Q(start_time__lte=start_time, end_time__gte= end_time) |
                     Q(start_time__gte=start_time, end_time__lte=end_time) |
-                    Q(end_time__gte=start_time, start_time__lte= end_time),
-                    status=3
+                    Q(end_time__gte=start_time, end_time__lte= end_time),
+                    status=1
                 ).values_list('stadium_id', flat=True)
             )
         if lat and lon:
